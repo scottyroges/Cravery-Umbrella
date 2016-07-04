@@ -1,0 +1,18 @@
+{
+  "mongo": {
+    "host": "localhost",
+    "port": 27017,
+    "url": "mongodb://localhost:27017/cravery",
+    "database": "cravery",
+    "password": "",
+    "name": "mongo",
+    "user": "",
+    "connector": "mongodb"
+  },
+  "memory": {
+    "name": "memory",
+    "localStorage": "",
+    "file": "",
+    "connector": "memory"
+  }
+}

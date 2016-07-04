@@ -1,0 +1,36 @@
+{
+  "name": "Restaurant",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "mongodb": {
+    "collection": "nyc_restaurants"
+  },
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "object",
+      "required": true
+    },
+    "phone": {
+      "type": "string"
+    },
+    "cuisine": {
+      "type": "string"
+    },
+    "geocode": {
+      "type": "object"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [
+    
+  ],
+  "methods": {}
+}
