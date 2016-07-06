@@ -25,6 +25,12 @@
     },
     "geocode": {
       "type": "object"
+    },
+    "location": {
+      "type": "object"
+    },
+    "neighborhood": {
+      "type": "string"
     }
   },
   "validations": [],
