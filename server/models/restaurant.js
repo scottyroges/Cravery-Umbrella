@@ -58,4 +58,59 @@ module.exports = function(Restaurant) {
 	      	returns: { type: 'array', root: true }
 	    }
 	);
+
+	Restaurant.prototype.addProperty = function(body,_cb){
+		var myRestaurant = this;
+		if(!myRestaurant.tmp){
+			myRestaurant.tmp = {};
+		}
+		for(var key in body){
+			myRestaurant.tmp[key] = body[key];
+		}
+		this.save(function(err,obj){
+			if(err){
+				_cb(err);
+			}
+			_cb(null,obj);
+		});
+		
+	};
+
+	Restaurant.remoteMethod(
+		'addProperty',
+		{
+			isStatic:false,
+			accepts:[
+				{ arg: 'body', type: 'object', http: { source: 'body' } } 
+			],
+		    http: {path:'/addProperty', verb: 'post'},
+		    returns: { type: 'object', root: true }
+		}
+
+	);
+
+	Restaurant.prototype.isCraveryCandidate = function(bool,_cb){
+		var myRestaurant = this;
+		myRestaurant.craveryCandidate = bool;
+		this.save(function(err,obj){
+			if(err){
+				_cb(err);
+			}
+			_cb(null,obj);
+		});
+		
+	};
+
+	Restaurant.remoteMethod(
+		'isCraveryCandidate',
+		{
+			isStatic:false,
+			accepts:[
+				{ arg: 'bool', type: 'boolean', required:true} 
+			],
+		    http: {path:'/isCraveryCandidate', verb: 'get'},
+		    returns: { type: 'object', root: true }
+		}
+
+	);
 };

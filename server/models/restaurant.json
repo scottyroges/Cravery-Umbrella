@@ -31,6 +31,12 @@
     },
     "neighborhood": {
       "type": "string"
+    },
+    "craveryCandidate":{
+      "type":"boolean"
+    },
+    "tmp":{
+      "type":"object"
     }
   },
   "validations": [],
