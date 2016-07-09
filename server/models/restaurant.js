@@ -17,7 +17,9 @@ module.exports = function(Restaurant) {
 		  var collection = db.collection('nyc_restaurants');
 		  collection.aggregate(aggregationQuery, function(err, data) {
 		    if (err) {}
-		    	console.log(data);
+		    	for(var i = 0; i < data.length; i++){
+		    		data[i].id = data[i]._id;
+		    	}
 	    		_cb(null, data);
 		  });
 		});
